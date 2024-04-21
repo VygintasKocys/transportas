@@ -1,7 +1,6 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 from transport.transport import Transport
 import math
-
 
 
 class Bus(Transport):
@@ -11,14 +10,9 @@ class Bus(Transport):
         self.passengers = passengers
         super().__init__(range_per_year, no, gasoline, fixed_cost, tech_date, drives_cat, consumption, insur_date)
 
-
-    def get_busses_for_passengers(self, passenger_no, *args):    # driving_distance, fuel, payment_per_km):
+    def get_busses_for_passengers(self, passenger_no, *args):
         return math.ceil(passenger_no / self.passengers)
 
-
     def total_cost_for_bus(self, passenger_no, driving_distance, fuel, payment_per_km):
-        return (self.total_cost_for_driving_distance(driving_distance,fuel, payment_per_km)
+        return (self.total_cost_for_driving_distance(driving_distance, fuel, payment_per_km)
                 * self.get_busses_for_passengers(passenger_no, driving_distance, fuel, payment_per_km))
-
-
-

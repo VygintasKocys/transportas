@@ -33,31 +33,12 @@ class Transport:
     def days_to_drive(self, driving_distance):
         return math.ceil(driving_distance/(self.range_per_year/365))
 
-
-    def gasoline_cost(self, driving_distance: int, fuel: dict, *args): #payment_per_km):
+    def gasoline_cost(self, driving_distance: int, fuel: dict, *args):
         return fuel[self.gasoline]*driving_distance*self.consumption/100
 
-
-    def fixed_cost_distance(self, driving_distance, *args):  # fuel, payment_per_km):
+    def fixed_cost_distance(self, driving_distance, *args):
         return self.fixed_cost/365*self.days_to_drive(driving_distance)
 
-
-    def total_cost_for_driving_distance(self,driving_distance, fuel, payment_per_km):
-        return (self.gasoline_cost(driving_distance, fuel,payment_per_km)
+    def total_cost_for_driving_distance(self, driving_distance, fuel, payment_per_km):
+        return (self.gasoline_cost(driving_distance, fuel, payment_per_km)
                 + self.fixed_cost_distance(driving_distance, fuel, payment_per_km) + driving_distance * payment_per_km)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

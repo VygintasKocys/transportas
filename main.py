@@ -19,7 +19,7 @@ import math
 # print(bus1.total_cost_for_bus(passenger_no, driving_distance, fuel, driver1.payment_per_km))
 # print(driver1.payment_per_km)
 # print(driver1.driver_cost_per_distance(driving_distance))
-# truck1.count_truck_and_trailer(36)
+# truck1.count_truck_and_trailer(37)
 
-
-
+truck1.driver_has_necessary_category(driver1.driver_category)
+driver1.driver_on_holiday(today_date1)
